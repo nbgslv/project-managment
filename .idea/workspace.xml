@@ -11,9 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bfc1e89-f47c-4adc-bbee-4bd1bafa94bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/withDataFetching.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Lane/Lane.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lane/Lane.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Board.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/withDataFetching.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/withDataFetching.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,5 +101,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="78" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588205098078" />
+    <state x="605" y="25" width="710" height="990" key="find.popup" timestamp="1588273608466">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="605" y="25" width="710" height="990" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588273608466" />
+    <state x="699" y="163" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588274113626">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="699" y="163" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588274113626" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1588273033442">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588273033442" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function withDataFetching(WrappedComponent) {
   return class extends React.Component {
@@ -12,8 +13,9 @@ export default function withDataFetching(WrappedComponent) {
     }
 
     async componentDidMount() {
+      const { dataSource } = this.props;
       try {
-        const data = await fetch(this.props.dataSource);
+        const data = await fetch(dataSource);
         const dataJSON = await data.json();
 
         if (dataJSON) {
@@ -37,3 +39,7 @@ export default function withDataFetching(WrappedComponent) {
     }
   };
 }
+
+withDataFetching.propTypes = {
+  dataSource: PropTypes.string.isRequired,
+};
