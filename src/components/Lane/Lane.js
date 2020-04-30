@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Ticket from '../../Ticket/Ticket';
+import Ticket from '../Ticket/Ticket';
 
 const LaneWrapper = styled.div`
   list-style: none;
@@ -27,6 +28,10 @@ const TicketWrapper = styled.div`
   text-align: center;
 `;
 
+const Alert = styled.div`
+  text-align: center;
+`;
+
 const Lane = ({ tickets, loading, error, title }) => (
   <LaneWrapper>
     <Title>{title}</Title>
@@ -36,5 +41,17 @@ const Lane = ({ tickets, loading, error, title }) => (
     </TicketWrapper>
   </LaneWrapper>
 );
+
+Lane.propTypes = {
+  tickets: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      ticket: PropTypes.object.isRequired,
+    })
+  ).isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default Lane;
