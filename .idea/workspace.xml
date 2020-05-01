@@ -11,11 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bfc1e89-f47c-4adc-bbee-4bd1bafa94bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/containers/Tickets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Lane/Lane.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Lane/Lane.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ticket/Ticket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/withDataFetching.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/withDataFetching.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

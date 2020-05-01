@@ -40,7 +40,7 @@ const Lane = ({ tickets, loading, error, title }) => (
     ) : (
       <TicketWrapper>
         {tickets.map(ticket => (
-          <Ticket key={ticket.id} ticket={ticket} />
+          <Ticket key={ticket.id} margin ticket={ticket} />
         ))}
       </TicketWrapper>
     )}

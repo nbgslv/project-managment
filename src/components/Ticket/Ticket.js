@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const TicketWrapper = styled.div`
   background: darkgray;
   padding: 20px;
-  margin: 20px;
+  margin: ${props => (props.margin ? '5%' : '0')};
   border-radius: 20px;
 
   &:not(:last-child) {
@@ -22,8 +22,8 @@ const Body = styled.p`
   width: 100%;
 `;
 
-const Ticket = ({ ticket }) => (
-  <TicketWrapper>
+const Ticket = ({ ticket, margin }) => (
+  <TicketWrapper margin={margin}>
     <Title>{ticket.title}</Title>
     <Body>{ticket.body}</Body>
   </TicketWrapper>
@@ -34,6 +34,11 @@ Ticket.propTypes = {
     title: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
   }).isRequired,
+  margin: PropTypes.bool,
 };
+
+Ticket.defaultProps = {
+  margin: false,
+}
 
 export default Ticket;
