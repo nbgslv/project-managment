@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function withDataFetching(WrappedComponent) {
-  return class extends React.Component {
+  class WithDataFetching extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -37,7 +37,11 @@ export default function withDataFetching(WrappedComponent) {
 
       return <WrappedComponent data={data} loading={loading} error={error} {...this.props} />;
     }
-  };
+  }
+
+  WithDataFetching.displayName = `withDataFetching(${WrappedComponent.name})`;
+
+  return WithDataFetching;
 }
 
 withDataFetching.propTypes = {
