@@ -32,15 +32,15 @@ const Alert = styled.div`
   text-align: center;
 `;
 
-const Lane = ({ tickets, loading, error, title }) => (
-  <LaneWrapper>
+const Lane = ({ laneId, tickets, loading, error, onDragStart, onDragOver, onDrop, title }) => (
+  <LaneWrapper onDragOver={onDragOver} onDrop={e => onDrop(e, laneId)}>
     <Title>{title}</Title>
     {loading || error ? (
       <Alert>{loading ? 'Loading...' : error}</Alert>
     ) : (
       <TicketWrapper>
         {tickets.map(ticket => (
-          <Ticket key={ticket.id} margin ticket={ticket} />
+          <Ticket key={ticket.id} margin ticket={ticket} onDragStart={onDragStart} />
         ))}
       </TicketWrapper>
     )}
@@ -48,6 +48,7 @@ const Lane = ({ tickets, loading, error, title }) => (
 );
 
 Lane.propTypes = {
+  laneId: PropTypes.number.isRequired,
   tickets: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -56,6 +57,9 @@ Lane.propTypes = {
   ).isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string.isRequired,
+  onDragStart: PropTypes.func.isRequired,
+  onDragOver: PropTypes.func.isRequired,
+  onDrop: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
 };
 
