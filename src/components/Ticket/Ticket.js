@@ -22,8 +22,8 @@ const Body = styled.p`
   width: 100%;
 `;
 
-const Ticket = ({ ticket, margin }) => (
-  <TicketWrapper margin={margin}>
+const Ticket = ({ ticket, onDragStart, margin }) => (
+  <TicketWrapper draggable onDragStart={e => onDragStart(e, ticket.id)} margin={margin}>
     <Title>{ticket.title}</Title>
     <Body>{ticket.body}</Body>
   </TicketWrapper>
@@ -31,9 +31,11 @@ const Ticket = ({ ticket, margin }) => (
 
 Ticket.propTypes = {
   ticket: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
   }).isRequired,
+  onDragStart: PropTypes.func.isRequired,
   margin: PropTypes.bool,
 };
 

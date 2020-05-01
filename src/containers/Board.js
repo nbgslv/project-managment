@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import withDataFetching from '../withDataFetching';
@@ -15,19 +15,68 @@ const BoardWrapper = styled.div`
   }
 `;
 
-const Board = ({ lanes, loading, error, data }) => (
-  <BoardWrapper>
-    {lanes.map(lane => (
-      <Lane
-        key={lane.id}
-        title={lane.title}
-        loading={loading}
-        error={error}
-        tickets={data.filter(ticket => ticket.lane === lane.id)}
-      />
-    ))}
-  </BoardWrapper>
-);
+class Board extends Component {
+  constructor() {
+    super();
+    this.state = {
+      tickets: [],
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    const { data } = this.props;
+
+    if (prevProps.data !== data) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ tickets: data });
+    }
+  }
+
+  onDragStart = (e, id) => {
+    e.dataTransfer.setData('id', id);
+  };
+
+  onDragOver = e => {
+    e.preventDefault();
+  };
+
+  onDrop = (e, laneId) => {
+    const id = Number(e.dataTransfer.getData('id'));
+
+    const tickets = this.state.tickets.filter(ticket => {
+      if (ticket.id === id) ticket.lane = laneId;
+      return ticket;
+    });
+
+    this.setState({
+      ...this.state,
+      tickets,
+    });
+  };
+
+  render() {
+    const { lanes, loading, error } = this.props;
+    const { tickets } = this.state;
+
+    return (
+      <BoardWrapper>
+        {lanes.map(lane => (
+          <Lane
+            key={lane.id}
+            laneId={lane.id}
+            title={lane.title}
+            loading={loading}
+            error={error}
+            onDragStart={this.onDragStart}
+            onDragOver={this.onDragOver}
+            onDrop={this.onDrop}
+            tickets={tickets.filter(ticket => ticket.lane === lane.id)}
+          />
+        ))}
+      </BoardWrapper>
+    );
+  }
+}
 
 Board.propTypes = {
   lanes: PropTypes.arrayOf(
