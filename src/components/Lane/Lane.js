@@ -35,10 +35,15 @@ const Alert = styled.div`
 const Lane = ({ tickets, loading, error, title }) => (
   <LaneWrapper>
     <Title>{title}</Title>
-    {(loading || error) && <Alert>{loading ? 'Loading...' : error}</Alert>}
-    <TicketWrapper>
-      {tickets.map(ticket => <Ticket key={ticket.id} ticket={ticket} />)}
-    </TicketWrapper>
+    {loading || error ? (
+      <Alert>{loading ? 'Loading...' : error}</Alert>
+    ) : (
+      <TicketWrapper>
+        {tickets.map(ticket => (
+          <Ticket key={ticket.id} margin ticket={ticket} />
+        ))}
+      </TicketWrapper>
+    )}
   </LaneWrapper>
 );
 
