@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const TicketWrapper = styled.div`
   background: darkgray;
   padding: 20px;
-  margin: ${props => (props.margin ? '5%' : '0')};
+  margin: ${props => (props.margin ? '5%' : '1%')};
   border-radius: 20px;
 
   &:not(:last-child) {
